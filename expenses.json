@@ -1,0 +1,149 @@
+[
+    {
+        "amount": 15.75,
+        "category": "Transport",
+        "date": "2025-10-12",
+        "description": "Taxi to airport",
+        "id": 1
+    },
+    {
+        "amount": 8.99,
+        "category": "Subscription",
+        "date": "2025-12-05",
+        "description": "Streaming service monthly",
+        "id": 2
+    },
+    {
+        "amount": 42.5,
+        "category": "Dining",
+        "date": "2025-09-17",
+        "description": "Dinner with friends",
+        "id": 3
+    },
+    {
+        "amount": 120.0,
+        "category": "Groceries",
+        "date": "2025-09-20",
+        "description": "Weekly grocery shopping",
+        "id": 4
+    },
+    {
+        "amount": 60.0,
+        "category": "Utilities",
+        "date": "2025-10-01",
+        "description": "Electricity bill",
+        "id": 5
+    },
+    {
+        "amount": 35.99,
+        "category": "Entertainment",
+        "date": "2025-10-03",
+        "description": "Cinema tickets",
+        "id": 6
+    },
+    {
+        "amount": 25.0,
+        "category": "Transport",
+        "date": "2025-10-06",
+        "description": "Monthly bus pass",
+        "id": 7
+    },
+    {
+        "amount": 9.5,
+        "category": "Dining",
+        "date": "2025-10-08",
+        "description": "Coffee and snack",
+        "id": 8
+    },
+    {
+        "amount": 199.99,
+        "category": "Electronics",
+        "date": "2025-10-10",
+        "description": "Wireless headphones",
+        "id": 9
+    },
+    {
+        "amount": 75.0,
+        "category": "Health",
+        "date": "2025-10-14",
+        "description": "Doctor consultation",
+        "id": 10
+    },
+    {
+        "amount": 49.99,
+        "category": "Subscription",
+        "date": "2025-10-15",
+        "description": "Online learning platform",
+        "id": 11
+    },
+    {
+        "amount": 18.0,
+        "category": "Transport",
+        "date": "2025-10-18",
+        "description": "Fuel refill",
+        "id": 12
+    },
+    {
+        "amount": 89.0,
+        "category": "Clothing",
+        "date": "2025-10-20",
+        "description": "Winter jacket",
+        "id": 13
+    },
+    {
+        "amount": 14.99,
+        "category": "Entertainment",
+        "date": "2025-10-22",
+        "description": "Video game rental",
+        "id": 14
+    },
+    {
+        "amount": 230.0,
+        "category": "Rent",
+        "date": "2025-11-01",
+        "description": "Partial rent payment",
+        "id": 15
+    },
+    {
+        "amount": 12.5,
+        "category": "Dining",
+        "date": "2025-11-03",
+        "description": "Lunch at work",
+        "id": 16
+    },
+    {
+        "amount": 55.0,
+        "category": "Utilities",
+        "date": "2025-11-05",
+        "description": "Internet bill",
+        "id": 17
+    },
+    {
+        "amount": 27.99,
+        "category": "Household",
+        "date": "2025-11-08",
+        "description": "Cleaning supplies",
+        "id": 18
+    },
+    {
+        "amount": 90.0,
+        "category": "Education",
+        "date": "2025-11-10",
+        "description": "Course materials",
+        "id": 19
+    },
+    {
+        "amount": 6.99,
+        "category": "Subscription",
+        "date": "2025-11-12",
+        "description": "Music streaming",
+        "id": 20
+    },
+    {
+        "amount": 12.0,
+        "category": "ww",
+        "description": "ww",
+        "date": "2025-12-12",
+        "id": 22
+    }
+]
