@@ -72,6 +72,41 @@ def total_spent():
 
     print(f"=============================\nThe Total spent is: {total_spent}$\n=============================")
 
+def get_all_cat():
+    expenses = load_expenses()
+    categories = []
+    for i in expenses:
+        if i["category"] not in categories:
+            categories.append(i["category"])
+        if i["category"] in categories:
+            continue
+    return categories
+
+def filter_by_cat():
+    expenses = load_expenses()
+    categories = get_all_cat()
+    print("Here is all the categories you have!")
+    print("=====================================")
+    print(categories)
+    try:
+        filtered_by_cat = []
+        cat_to_find= input("What category are you looking for?")
+        if cat_to_find not in categories:
+            print("=" * 30)
+            print("=" * 30)
+            print("Invalid Input, or the category doesn't exist")
+            print("=" * 30)
+            print("=" * 30)
+
+            return
+        else:
+            for cat in expenses:
+                if cat["category"] == cat_to_find:
+                    filtered_by_cat.append(cat)
+        pretty_format(filtered_by_cat) 
+        return 
+    except ValueError:
+        print("something went wrong")
 
 
 
