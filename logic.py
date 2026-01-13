@@ -1,7 +1,7 @@
 # logic.py
 from storage import load_expenses, save_expenses
 import json
-from utils import validate_integer
+from utils import pretty_format
 
 def add_expense(expense):
     expenses = load_expenses()
@@ -115,3 +115,4 @@ def filter_by_cat():
 
 
         
+
