@@ -29,10 +29,30 @@ def validate_date(date_str):
         print("Invalid date. Use YYYY-MM-DD.")
         return None
     
+"""
 def validate_integer(integer):
     try:
         number = int(integer)
         return number
     except ValueError:
         print("invalid Input")
+ """    
+
+def pretty_format(filtered_by_cat):
+    print("=" * 30)
+    for x in filtered_by_cat:
+        if x["amount"]:
+            print(f"amout: {x["amount"]}")
+        if x["category"]:
+            print(f"category: {x["category"]}")
+        if x["description"]:
+            print(f"description: {x["description"]}")
+        if x["date"]:
+            print(f"date: {x["date"]}")
+        if x["id"]:
+            print(f"id: {x["id"]}")
+            print("=" * 30)
+            print("=" * 30)
+
+    
 
