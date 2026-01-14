@@ -121,8 +121,41 @@ def filter_by_cat():
     except ValueError:
         print("something went wrong")
 
+def get_all_dates():
+    expenses = load_expenses()
+    dates = []
+    for i in expenses:
+        if i["date"] not in dates:
+            dates.append(i["date"])
+        if i["date"] in dates:
+            continue
+    return dates
 
+def filter_by_date():
+    expenses = load_expenses()
+    dates = get_all_dates()
+    print("Here is all the dates where you have spent something!")
+    print("=====================================")
+    print(dates)
+    try:
+        filtered_by_date = []
+        date_to_find= input("What Date are you looking for?")
+        if date_to_find not in dates:
+            print("=" * 30)
+            print("=" * 30)
+            print("Invalid Input, or the Date doesn't exist")
+            print("=" * 30)
+            print("=" * 30)
 
+            return
+        else:
+            for date in expenses:
+                if date["date"] == date_to_find:
+                    filtered_by_date.append(date)
+        pretty_format(filtered_by_date) 
+        return 
+    except ValueError:
+        print("something went wrong")
         
     
 
