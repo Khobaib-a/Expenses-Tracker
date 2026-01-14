@@ -1,7 +1,7 @@
 # logic.py
 from storage import load_expenses, save_expenses
 import json
-from utils import pretty_format
+from utils import pretty_format, current_year, get_all_days_of_expenses#, validate_integer
 
 def add_expense(expense):
     expenses = load_expenses()
@@ -121,45 +121,62 @@ def filter_by_cat():
     except ValueError:
         print("something went wrong")
 
-def get_all_dates():
-    expenses = load_expenses()
-    dates = []
-    for i in expenses:
-        if i["date"] not in dates:
-            dates.append(i["date"])
-        if i["date"] in dates:
-            continue
-    return dates
+
 
 def filter_by_date():
-    expenses = load_expenses()
-    dates = get_all_dates()
-    print("Here is all the dates where you have spent something!")
-    print("=====================================")
-    print(dates)
-    try:
-        filtered_by_date = []
-        date_to_find= input("What Date are you looking for?")
-        if date_to_find not in dates:
-            print("=" * 30)
-            print("=" * 30)
-            print("Invalid Input, or the Date doesn't exist")
-            print("=" * 30)
-            print("=" * 30)
+    YEARS = current_year()
+    try: 
+        year_searched = int(input("Enter the year: "))
+    
+        if year_searched not in YEARS:
+            print("Invalid Input!")
+            return 
+    except ValueError:
+        print("Invalid Input!")
+        return
+    
+    try: 
+        MONTHS = [1,2,3,4,5,6,7,8,9,10,11,12]
+        month_searched = int(input("Enter the month: "))
+        
+        if month_searched not in MONTHS:
+            print("Invalid Input!")
+            return 
+    except ValueError:
+        print("Invalid Input!")
+        return
 
+    print("now here is all the days where you have spent something in them")
+    print("================================================================")
+    dd_date = get_all_days_of_expenses()
+    print(dd_date)
+    
+    try: 
+        day_searched = input("Enter the day: ")
+        if day_searched not in dd_date:
+            print("Invalid Input!")
+            return 
+    except ValueError:
+        print("Invalid Input!")
+        return
+    year_searched = str(year_searched)
+    month_searched = str(month_searched)
+    day_searched = str(day_searched)
+    filtered_date = year_searched +"-" + month_searched +"-" +day_searched
+    expenses = load_expenses()
+    
+    for s in expenses:
+        if filtered_date == str(s["date"]):
+            print(f"The amount: {s["amount"]}")
+            print(f"The category: {s["category"]}")
+            print(f"The description: {s["description"]}")
+            print(f"The date: {s["date"]}")
+            print(f"The id: {s["id"]}")
             return
         else:
-            for date in expenses:
-                if date["date"] == date_to_find:
-                    filtered_by_date.append(date)
-        pretty_format(filtered_by_date) 
-        return 
-    except ValueError:
-        print("something went wrong")
+            print("this combination did not match any date where u have spent something, so there is not expenses in this day")
+            return
+    return
         
     
-
-
-    ### in this branch it will be about solving the date problem
-        
 
