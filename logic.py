@@ -18,7 +18,20 @@ def add_expense(expense):
 
 def view_all_expenses():
     expenses = load_expenses()
-    print(json.dumps(expenses, indent=4, ensure_ascii=False, sort_keys=True))
+    print("=" * 30)
+    for x in expenses:
+        if x["amount"]:
+            print(f"amout: {x["amount"]}")
+        if x["category"]:
+            print(f"category: {x["category"]}")
+        if x["description"]:
+            print(f"description: {x["description"]}")
+        if x["date"]:
+            print(f"date: {x["date"]}")
+        if x["id"]:
+            print(f"id: {x["id"]}")
+            print("=" * 30)
+            print("=" * 30)
 
 
 def get_the_id_to_delete():

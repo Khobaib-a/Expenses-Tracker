@@ -101,6 +101,6 @@ def main():
             print("4. Total Balance")
             print("5. filter by category")
             print("6. Exit")
-
+            
 if __name__ == "__main__":
     main()

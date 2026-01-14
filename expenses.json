@@ -145,5 +145,12 @@
         "description": "ww",
         "date": "2025-12-12",
         "id": 22
+    },
+    {
+        "amount": 747.0,
+        "category": "Fun",
+        "description": "buying a toy",
+        "date": "2026-01-14",
+        "id": 23
     }
 ]

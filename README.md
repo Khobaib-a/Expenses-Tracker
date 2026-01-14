@@ -12,6 +12,7 @@ A simple command-line expense tracker that stores expenses in a local JSON file 
 - **View all Expenses** (prints JSON list)
 - **Delete an Expense** (by auto-assigned numeric `id`, 3 attempts)
 - **Show Total** of all expenses
+- **filter by category** filter the output based on the category chosen
 
 ---
 
@@ -39,7 +40,8 @@ When you run `python main.py` you will see a menu:
 2. View all Expenses
 3. Delete an Expense
 4. Total Balance
-5. Exit
+5.filter by category
+6. Exit
 
 - **Add Expense:** enter amount (float), category, description and date (YYYY-MM-DD).
 - **Delete:** enter the expense `id` shown in the listing (you get 3 tries).
