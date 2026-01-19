@@ -13,6 +13,7 @@ A simple command-line expense tracker that stores expenses in a local JSON file 
 - **Delete an Expense** (by auto-assigned numeric `id`, 3 attempts)
 - **Show Total** of all expenses
 - **filter by category** filter the output based on the category chosen
+- **filter by date** filter the output based on the date. YYYY-MM-DD
 
 ---
 
@@ -40,13 +41,16 @@ When you run `python main.py` you will see a menu:
 2. View all Expenses
 3. Delete an Expense
 4. Total Balance
-5.filter by category
-6. Exit
+5. filter by category
+6. filter by date
+7. Exit
 
 - **Add Expense:** enter amount (float), category, description and date (YYYY-MM-DD).
 - **Delete:** enter the expense `id` shown in the listing (you get 3 tries).
 - **Total Balance:** prints the summed `amount` of all saved expenses.
-
+- **Filter by category:**
+- **filter by date:** get asked to enter the year first, then the month, then checks if there any expenses at this period if not print a message that, there is no       expenses. but if at this period there is expenses, the program asks for the day and print only the expenses that meet this date.
+- **Exit:** End the program
 ---
 
 ## Data format (stored in `expenses.json`) 📁
