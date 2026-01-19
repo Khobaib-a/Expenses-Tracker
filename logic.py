@@ -122,15 +122,7 @@ def filter_by_cat():
     except ValueError:
         print("something went wrong")
 
-def get_all_dates():
-    expenses = load_expenses()
-    dates = []
-    for i in expenses:
-        if i["date"] not in dates:
-            dates.append(i["date"])
-        if i["date"] in dates:
-            continue
-    return dates
+
 
 
 def filter():
