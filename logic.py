@@ -1,8 +1,9 @@
 # logic.py
 from storage import load_expenses, save_expenses
 import json
-from utils import pretty_format
-from datetime import datetime
+from formatting import show_days, pretty_format
+from utils import day_prompt, year_prompt,month_prompt, get_all_days
+
 def add_expense(expense):
     expenses = load_expenses()
     # Assign an auto-incrementing numeric id (max existing id + 1)
@@ -131,28 +132,32 @@ def get_all_dates():
             continue
     return dates
 
-"""def filter_by_date():
-    expenses = load_expenses()
-    dates = get_all_dates()
-    print("Here is all the dates where you have spent something!")
-    print("=====================================")
-    print(dates)
-    try:
-        filtered_by_date = []
-        date_to_find= input("What Date are you looking for?")
-        if date_to_find not in dates:
-            print("=" * 30)
-            print("=" * 30)
-            print("Invalid Input, or the Date doesn't exist")
-            print("=" * 30)
-            print("=" * 30)
 
-            return
-        else:
-            for date in expenses:
-                if date["date"] == date_to_find:
-                    filtered_by_date.append(date)
-        pretty_format(filtered_by_date) 
-        return 
-    except ValueError:
-        print("something went wrong")"""
+def filter():
+    year = year_prompt()
+    month = month_prompt()
+    relevant_days =get_all_days(year, month)
+    show_days(year, month)
+    filtered_dates = []
+    if relevant_days:
+        day = day_prompt()
+        for x in relevant_days:
+            if day == x[8:]:
+                filtered_dates.append(x)
+    return filtered_dates
+    
+
+
+def filter_by_date():
+    expenses = load_expenses()
+    filtered_dates = filter()
+    for d in filtered_dates:
+        for t in expenses:
+            if t["date"] == d:
+                print(f"amout: {t["amount"]}")
+                print(f"category: {t["category"]}")
+                print(f"description: {t["description"]}")
+                print(f"date: {t["date"]}")
+                print(f"id: {t["id"]}")
+                print("=" * 30)
+

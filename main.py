@@ -1,7 +1,7 @@
 # main.py
-from utils import validate_amount, validate_category, validate_description, validate_date, filter_by_date
-from logic import add_expense, view_all_expenses, delete_expense, total_spent, filter_by_cat
-
+from utils import validate_amount, validate_category, validate_description, validate_date
+from logic import add_expense, view_all_expenses, delete_expense, total_spent, filter_by_cat, filter_by_date
+from formatting import print_menu
 
 def get_expense_input():
     while True:
@@ -30,13 +30,7 @@ def get_expense_input():
 def main():
     print("Expenses Tracker CLI")
     print("====================")
-    print("1. Add Expense")
-    print("2. View all Expenses")
-    print("3. Delete an Expense")
-    print("4. Total Balance")
-    print("5. filter by category")
-    print("6.filter by date")
-    print("7. Exit")
+    print_menu()
     
     while True:
         choice = input("Select an option: ")
@@ -45,64 +39,28 @@ def main():
             expense = get_expense_input()
             add_expense(expense)
             print("you need to choose exit to end the program")
-            print("1. Add Expense")
-            print("2. View all Expenses")
-            print("3. Delete an Expense")
-            print("4. Total Balance")
-            print("5. filter by category")
-            print("6.filter by date")
-            print("7. Exit")
+            print_menu()
         elif choice == "2":
             view_all_expenses()
             print("you need to choose exit to end the program")
-            print("1. Add Expense")
-            print("2. View all Expenses")
-            print("3. Delete an Expense")
-            print("4. Total Balance")
-            print("5. filter by category")
-            print("6.filter by date")
-            print("7. Exit")         
+            print_menu()        
         elif choice == "3":
             delete_expense()
             print("you need to choose exit to end the program")
-            print("1. Add Expense")
-            print("2. View all Expenses")
-            print("3. Delete an Expense")
-            print("4. Total Balance")
-            print("5. filter by category")
-            print("6.filter by date")
-            print("7. Exit") 
+            print_menu()
 
         elif choice == "4":
             total_spent()
             print("you need to choose exit to end the program")
-            print("1. Add Expense")
-            print("2. View all Expenses")
-            print("3. Delete an Expense")
-            print("4. Total Balance")
-            print("5. filter by category")
-            print("6.filter by date")
-            print("7. Exit") 
+            print_menu()
         elif choice == "5":
             filter_by_cat()
             print("you need to choose exit to end the program")
-            print("1. Add Expense")
-            print("2. View all Expenses")
-            print("3. Delete an Expense")
-            print("4. Total Balance")
-            print("5. filter by category")
-            print("6.filter by date")
-            print("7. Exit") 
+            print_menu()
         elif choice == "6":
             filter_by_date()
             print("you need to choose exit to end the program")
-            print("1. Add Expense")
-            print("2. View all Expenses")
-            print("3. Delete an Expense")
-            print("4. Total Balance")
-            print("5. filter by category")
-            print("6.filter by date")
-            print("7. Exit") 
+            print_menu()
         elif choice == "7":
             print("Good bye")
             break
@@ -111,12 +69,7 @@ def main():
         else:
             print("Invalid option")
             print("you need to choose exit to end the program")
-            print("1. Add Expense")
-            print("2. View all Expenses")
-            print("3. Delete an Expense")
-            print("4. Total Balance")
-            print("5. filter by category")
-            print("6. Exit")
+            print_menu()
             
 if __name__ == "__main__":
     main()

@@ -39,21 +39,6 @@ def validate_integer(integer):
         print("invalid Input")
  """    
 
-def pretty_format(filtered_by_cat):
-    print("=" * 30)
-    for x in filtered_by_cat:
-        if x["amount"]:
-            print(f"amout: {x["amount"]}")
-        if x["category"]:
-            print(f"category: {x["category"]}")
-        if x["description"]:
-            print(f"description: {x["description"]}")
-        if x["date"]:
-            print(f"date: {x["date"]}")
-        if x["id"]:
-            print(f"id: {x["id"]}")
-            print("=" * 30)
-            print("=" * 30)
 
 def get_all_days(year, month):
     expenses = load_expenses()
@@ -65,13 +50,6 @@ def get_all_days(year, month):
     relevant_days.sort()
     return relevant_days
 
-def show_days(year,month):
-    relevant_days = get_all_days(year ,month)
-    print(f"\nThe Day {" " * 10 }, The Date")
-    print("=============================\n"
-    "=============================")
-    for x in relevant_days:
-        print(f"{x[8:]} {" " * 10} {x} \n")
 
 
 
@@ -101,29 +79,5 @@ def day_prompt():
             return searched_day
         else:
             print("Invalid Day, try again with this format(DD)")
-
-def filter():
-    year = year_prompt()
-    month = month_prompt()
-    relevant_days =get_all_days(year, month)
-    show_days(year, month)
-    day = day_prompt()
-    filtered_dates = []
-    for x in relevant_days:
-        if day == x[8:]:
-            filtered_dates.append(x)
-    return filtered_dates
-
-def filter_by_date():
-    expenses = load_expenses()
-    filtered_dates = filter()
-    for d in filtered_dates:
-        for t in expenses:
-            if t["date"] == d:
-                print(t)
-
-
-
-
 
 
