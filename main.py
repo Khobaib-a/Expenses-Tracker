@@ -1,7 +1,6 @@
 # main.py
-from utils import validate_amount, validate_category, validate_description, validate_date
-from logic import add_expense, view_all_expenses, delete_expense, total_spent, filter_by_cat, filter_by_date
-import json
+from utils import validate_amount, validate_category, validate_description, validate_date, filter_by_date
+from logic import add_expense, view_all_expenses, delete_expense, total_spent, filter_by_cat
 
 
 def get_expense_input():

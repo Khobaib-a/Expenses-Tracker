@@ -2,7 +2,7 @@
 from storage import load_expenses, save_expenses
 import json
 from utils import pretty_format
-
+from datetime import datetime
 def add_expense(expense):
     expenses = load_expenses()
     # Assign an auto-incrementing numeric id (max existing id + 1)
@@ -131,7 +131,7 @@ def get_all_dates():
             continue
     return dates
 
-def filter_by_date():
+"""def filter_by_date():
     expenses = load_expenses()
     dates = get_all_dates()
     print("Here is all the dates where you have spent something!")
@@ -155,12 +155,4 @@ def filter_by_date():
         pretty_format(filtered_by_date) 
         return 
     except ValueError:
-        print("something went wrong")
-        
-    
-
-
-    ### in this branch it will be about solving the date problem but we will use maybe another way to solve the same problem so 
-    #it will be different that v2
-        
-
+        print("something went wrong")"""
