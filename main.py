@@ -1,7 +1,7 @@
 # main.py
 from utils import validate_amount, validate_category, validate_description, validate_date
 from logic import add_expense, view_all_expenses, delete_expense, total_spent, filter_by_cat, filter_by_date
-from formatting import print_menu
+from formatting import print_menu, print_report
 
 def get_expense_input():
     while True:
@@ -48,7 +48,6 @@ def main():
             delete_expense()
             print("you need to choose exit to end the program")
             print_menu()
-
         elif choice == "4":
             total_spent()
             print("you need to choose exit to end the program")
@@ -62,10 +61,13 @@ def main():
             print("you need to choose exit to end the program")
             print_menu()
         elif choice == "7":
+            print_report()
+            print("you need to choose exit to end the program")
+            print_menu()
+        elif choice == "8":
             print("Good bye")
             break
-        
-            
+    
         else:
             print("Invalid option")
             print("you need to choose exit to end the program")

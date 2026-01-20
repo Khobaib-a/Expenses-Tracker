@@ -81,3 +81,31 @@ def day_prompt():
             print("Invalid Day, try again with this format(DD)")
 
 
+def get_report_date():
+    expenses = load_expenses()
+    year = year_prompt()
+    month = month_prompt()
+    relevant_expenses = []
+    for x in expenses:
+        date = x["date"]
+        if date[:4] == year and date[5:7] == month:
+            relevant_expenses.append(date)
+    if not relevant_expenses:
+        return relevant_expenses
+    else:
+        relevant_expenses.sort()
+        return relevant_expenses
+
+def get_report_expenses():
+    expenses = load_expenses()
+
+    all_relevant_expenses = []
+    report_date = get_report_date()
+    if not report_date:
+        return[]
+    
+    for date in report_date:
+        for expense in expenses:
+            if date == expense["date"]:
+                all_relevant_expenses.append(expense)
+    return all_relevant_expenses
